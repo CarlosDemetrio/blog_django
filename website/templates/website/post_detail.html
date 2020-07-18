@@ -1,17 +1,19 @@
 {% extends 'website/base.html' %}
 
 {% block conteudo %}
-    <div class="blog-post">
-    <p>publicado em:<time>{{ post.data_publicacao }}</time></p>
+
     <div class="blog-post-title">
         <h2>
-            <a href="{% url 'post_detail' pk=post.pk %}">
+            <a href="{% url 'website:post_detail' post.slug %}">
                 {{ post.titulo }}
             </a>
         </h2>
     </div>
-    <div class="blog-post">
-        <p>{{ post.texto |linebreaksbr }}</p>
+    <div class="blog-description">
+        {{ post.resumo|safe }}
     </div>
-
+    <div class="blog-post">
+        {{ post.conteudo|safe }}
+    </div>
+    <p>publicado em:<time>{{ post.data_publicacao }}</time></p>
 {% endblock %}

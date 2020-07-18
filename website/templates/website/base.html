@@ -7,34 +7,43 @@
     <meta name="description" content="Blog sobre django, criado apenas para estudo">
     <meta name="author" content="Carlos Demetrio">
     <link rel="icon" href="../../static/IMG/logo.png">
-    <title>DJANGO BLOG</title>
-    <link rel="stylesheet" type="text/css" href="../../static/CSS/website.css">
+    <title>{% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/website.css' %}">
         <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <header>
     <!-- Image and text -->
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="/">
-        <img src="../../static/IMG/logo.png" width="30" height="30" class="d-inline-block align-top" alt="img">
-       BLOG DJANGO
-      </a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">
+        <img alt="img" class="d-inline-block align-top" class="blog-header-logo" height="30"
+             src="../../static/IMG/logo.png" width="30">
+        BLOG DJANGO
+        </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+        </ul>
+    </div>
     </nav>
 </header>
 <main>
     <div class="content container">
         <div class="row">
-            <div class="col-md">
-                {% block conteudo %}
-                {% endblock %}
-            </div>
+            {% block conteudo %}
+            {% endblock %}
         </div>
     </div>
 
 </main>
 <footer class="blog-footer">
-      <p>Template criado por <a href="https://twitter.com/carlos_demetriu">@carlos_demetriu</a></p>
+      <p>Template criado por <a href="https://twitter.com/carlos_demetriu" target="_blank">@carlos_demetriu</a></p>
       <p>
         <a href="#">Voltar cima</a>
       </p>
