@@ -19,3 +19,9 @@ def post_detail(request, slug):
     return render(request, 'website/post_detail.html', {'post': post})
 
 
+def contato(request):
+    return render(request, 'website/contato.html')
+
+
+def sobre(request):
+    return render(request, 'website/sobre.html')
