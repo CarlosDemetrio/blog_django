@@ -16,7 +16,7 @@
 - Python 3.8.0:
   - Django 3.0.8;
     
-### Após clonar o repositório, instale as dependências do python3 e rode essas linhas de código na pasta site_professor/project/:
+### Após clonar o repositório, instale as dependências do python3 e rode essas linhas de código na pasta do projeto:
 Instale as dependências
 ```shell 
   pip install -r requirements.txt
